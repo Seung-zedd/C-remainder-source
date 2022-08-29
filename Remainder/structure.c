@@ -18,7 +18,7 @@ typedef struct GameInfomation {
 	struct GameInfo* friendgame;
 }GAME_INFO; //struct GameInfomation을 GAME_INFO로 구조체 선언 
 
-int main(void)
+int main_struct(void)
 {
 	char* name = "나도게임";
 	int year = 2017;
