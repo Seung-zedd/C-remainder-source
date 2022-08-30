@@ -3,62 +3,63 @@
 #define MAX 10000
 int main(void)
 {	
-	//fputs, fgets ½Ö -> ¹®ÀÚ¿­À» ºÒ·¯¿È
+	//fputs, fgets ìŒ -> ë¬¸ìì—´ì„ ë¶ˆëŸ¬ì˜´
 	char line[MAX];
-	//ÆÄÀÏ¿¡ ¾²±â
-	/*FILE * file = fopen("C:\\Users\\sdok1\\OneDrive\\test1.txt", "wb");
+	
+	//íŒŒì¼ì— ì“°ê¸°
+	FILE * file = fopen("C:\\Users\\sdok1\\OneDrive\\test1.txt", "wb"); //visual studioì—ì„œëŠ” ì—­ìŠ¬ë ˆì‰¬ 2ë²ˆí•´ì¤˜ì•¼í•¨
 
 	if (file == NULL)
 	{
-		printf("ÆÄÀÏ ¿­±â ½ÇÆĞ\n");
+		printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
 		return 1;
 	}
 
-	fputs("fputs ¸¦ ÀÌ¿ëÇØ¼­ ±ÛÀ» Àû¾îº¼°Ô¿ä\n", file);
-	fputs("Àß ÀûÈ÷´ÂÁö È®ÀÎÇØÁÖ¼¼¿ä\n", file);*/
+	fputs("fputs ë¥¼ ì´ìš©í•´ì„œ ê¸€ì„ ì ì–´ë³¼ê²Œìš”\n", file);
+	fputs("ì˜ ì íˆëŠ”ì§€ í™•ì¸í•´ì£¼ì„¸ìš”\n", file);
 
-	//ÆÄÀÏÀ» ´İÁö ¾ÊÀ¸¸é µ¥ÀÌÅÍ ¼Õ½ÇÀÌ ¹ß»ıÇÏ¹Ç·Î Ç×»ó ´İ´Â ½À°üÀ» µéÀÏ °Í!!
+	fclose(file); //íŒŒì¼ì„ ë‹«ì§€ ì•Šìœ¼ë©´ ë°ì´í„° ì†ì‹¤ì´ ë°œìƒí•˜ë¯€ë¡œ í•­ìƒ ë‹«ëŠ” ìŠµê´€ì„ ë“¤ì¼ ê²ƒ!!
 	
-	////ÆÄÀÏ ÀĞ±â
-	//FILE * file = fopen("C:\\Users\\sdok1\\OneDrive\\test1.txt", "rb");
+	////íŒŒì¼ ì½ê¸°
+	FILE * file = fopen("C:\\Users\\sdok1\\OneDrive\\test1.txt", "rb");
 
-	//if (file == NULL)
-	//{
-	//	printf("ÆÄÀÏ ¿­±â ½ÇÆĞ\n");
-	//	return 1;
-	//}
+	if (file == NULL)
+	{
+		printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
+		return 1;
+	}
 
-	//while (fgets(line, MAX, file) != NULL)
-	//{
-	//	printf("%s", line);
-	//}
+	while (fgets(line, MAX, file) != NULL)
+	{
+		printf("%s", line);
+	}
 
-	//fclose(file);
+	fclose(file);
 
-	int num[6] = { 0,0,0,0,0,0 }; // ÃßÃ·¹øÈ£
-	int bonus = 0; //º¸³Ê½º ¹øÈ£
+	int num[6] = { 0,0,0,0,0,0 }; // ì¶”ì²¨ë²ˆí˜¸
+	int bonus = 0; //ë³´ë„ˆìŠ¤ ë²ˆí˜¸
 	char str1[MAX];
 	char str2[MAX];
 
-	//ÆÄÀÏ¿¡ ¾²±â
-	//FILE* file = fopen("C:\\Users\\sdok1\\OneDrive\\test2.txt", "wb");
-	//if (file == NULL)
-	//{
-	//	printf("ÆÄÀÏ ¿­±â ½ÇÆĞ\n");
-	//	return 1;
-	//}
+	//íŒŒì¼ì— ì“°ê¸°
+	FILE* file = fopen("C:\\Users\\sdok1\\OneDrive\\test2.txt", "wb");
+	if (file == NULL)
+	{
+		printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
+		return 1;
+	}
 
-	////·Î¶Ç ÃßÃ· ¹øÈ£ ÀúÀå
-	//fprintf(file, "%s %d %d %d %d %d %d\n", "ÃßÃ·¹øÈ£", 1, 2, 3, 4, 5, 6);
-	//fprintf(file, "%s %d\n", "º¸³Ê½º¹øÈ£", 7);
+	//ë¡œë˜ ì¶”ì²¨ ë²ˆí˜¸ ì €ì¥
+	fprintf(file, "%s %d %d %d %d %d %d\n", "ì¶”ì²¨ë²ˆí˜¸", 1, 2, 3, 4, 5, 6);
+	fprintf(file, "%s %d\n", "ë³´ë„ˆìŠ¤ë²ˆí˜¸", 7);
 
-	//fclose(file);
+	fclose(file);
 
-	//ÆÄÀÏ¿¡ ÀĞ±â
+	//íŒŒì¼ì— ì½ê¸°
 	FILE* file = fopen("C:\\Users\\sdok1\\OneDrive\\test2.txt", "rb");
 	if (file == NULL)
 	{
-		printf("ÆÄÀÏ ¿­±â ½ÇÆĞ\n");
+		printf("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨\n");
 		return 1;
 	}
 
